@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -o SafeGuard.zip -d proj
+      - run: sed -i "s/applicationId 'com.example.settingsblocker'/applicationId 'com.safeguard.guard'/" proj/app/build.gradle
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 17 }
       - uses: gradle/actions/setup-gradle@v3
